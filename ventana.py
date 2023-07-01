@@ -1,5 +1,10 @@
 import tkinter
+import serial
 import os
+
+#Codigo para el puerto
+#puerto = serial.Serial()
+
 
 def calcRedundantBits(m):
  
@@ -114,17 +119,19 @@ carpeta_img = os.path.join(carpeta_principal,"logo")
 
 ventana = tkinter.Tk()
 ventana.title("Codigo Hamming")
-ventana.geometry("400x300")
+ventana.geometry("500x400")
 ventana.iconbitmap(default=os.path.join(carpeta_img,"chip1.ico"))
 
 
 
-cajatest = tkinter.Entry(ventana)
-cajatest.place(y=100)
+label1 = tkinter.Label(ventana, text="Ingrese el codigo: ",width=30)
+label1.grid(row=1, column=0, sticky="n", padx=5, pady=5)
+label1.pack()
+
+cajatest = tkinter.Entry(ventana,width=15)
 cajatest.pack()
 
 boton1 = tkinter.Button(ventana, text="Enter", command=inDatos)
-boton1.place(y=100)
 boton1.pack()
 
 nombre = tkinter.Label(ventana, text = "Universidad de lima")
