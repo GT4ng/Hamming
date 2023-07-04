@@ -11,7 +11,9 @@ class test:
                 self.datosList.append(int(self.datos[i]))
         else:
             print("La cantidad de bits no es el suficiente. Intente nuevamente :)")
+        print("El codigo ingresado es: ")
         print(self.datosList)
+        print("\n")
 
     #Ingresa los bits de Paridad al codigo
 
@@ -28,13 +30,11 @@ class test:
                 if(cont < 7):
                     aux1 = self.datosList[cont]
                     self.hammingX.append(aux1)
-        print("---------------------------------------------")
-        print("El codigo ingresado es: \n")
+        print("El codigo ingresado es: ")
         print(self.hammingX)
-        print("\n")
-        print("Colocando los bits de paridad: ")
+        print("\nColocando los bits de paridad: ")
         print(len(self.hammingX))
-        print("---------------------------------------------\n")
+        print("\n")
 
     def logica(self):
         self.p = 0
@@ -81,9 +81,9 @@ class test:
                 self.hammingX[indicador] = 1
             indicador = indicador + 4       
 
-        print("------------------------------------------------")
+        print("El mensaje completo con bits de paridad: ")
         print(self.hammingX)
-        print("------------------------------------------------\n")
+        print("\n")
 
 
 
