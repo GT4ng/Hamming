@@ -1,7 +1,11 @@
 #Prueba
 
 
-class test:
+class Hamming:
+    
+    #Inicia el codigo insertando los 7 bits
+    #Los bits a insertar solo son 0 o 1. Cualquier caracter que no sean esos valores no se aceptara
+
     def __init__(self):
         self.datos = input("Ingrese el codigo de 7 digitos a enviar: ")
         self.datosList = []
@@ -15,7 +19,8 @@ class test:
         print(self.datosList)
         print("\n")
 
-    #Ingresa los bits de Paridad al codigo
+    #paridad(): Ingresa los bits de Paridad al codigo
+    #           A los 7 bits que se insertaron se le agregan los bits de paridad
 
     def paridad(self):
         p = "X"
@@ -35,6 +40,10 @@ class test:
         print("\nColocando los bits de paridad: ")
         print(len(self.hammingX))
         print("\n")
+
+    #logica(): Calcula los bits de paridad y se les asigna el bit correspondiente
+    #          los valores "X" se reemplazan basados en la teoria de si existe
+    #          paridad con los bits contados en todo el array
 
     def logica(self):
         self.p = 0
@@ -85,7 +94,7 @@ class test:
         print(self.hammingX)
         print("\n")
 
-
+#calcHamming(): Ejecuta el calculo de bits
 
     def calcHamming(self):
         for i in range(11):
@@ -93,7 +102,10 @@ class test:
             if(identificador == "X"):
                 self.logica()
                 self.p = self.p + 1
-    
+
+#introError(): Segun el mensaje obtenido con el codigo hamming se le asigna
+#              el valor "n" indica la posicion del bit que se va a cambiar
+
     def introError(self):
         n = int(input("introduzca la posicion del bit en la que desea introducir el error: "))
         print("\n")
@@ -108,29 +120,8 @@ class test:
         print("Codigo con error: ")
         print(self.hammingX)
 
-
-"""
-   def paridad(self):
-        p = "X"
-        self.hammingX = []
-        for i in range(11):
-            if(i == 0 or i== 1 or i ==3 or i==7):
-                self.hammingX.append(p)
-            else:
-                cont = 0
-                if(cont < 7):
-                    aux1 = self.datosList[cont]
-                    self.hammingX.append(aux1)
-                cont = cont + 1
-        print(self.hammingX)
-"""
-
-
-
-
-
-        
-prueba1 = test()
+# Se inicia la clase y se ejecuta en orden descendente
+prueba1 = Hamming()
 prueba1.paridad()
 prueba1.calcHamming()
 prueba1.introError()
