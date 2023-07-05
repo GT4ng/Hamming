@@ -121,7 +121,7 @@ class Hamming:
         print(self.hammingX)
 
 # Se inicia la clase y se ejecuta en orden descendente
-prueba1 = Hamming()
-prueba1.paridad()
-prueba1.calcHamming()
-prueba1.introError()
+
+code = Hamming()
+code.paridad()
+code.calcHamming()
