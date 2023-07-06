@@ -1,10 +1,17 @@
-#Prueba
+import tkinter
+import os
 
+#####################################################################################
+#####################################################################################
+#####################################################################################
+#####################################################################################
+#####################################################################################
 
 class Hamming:
     
     #Inicia el codigo insertando los 7 bits
-    #Los bits a insertar solo son 0 o 1. Cualquier caracter que no sean esos valores no se aceptara
+    #Los bits a insertar solo son 0 o 1. Cualquier caracter que no sean esos
+    #valores no se aceptara.
 
     def __init__(self):
         self.datos = input("Ingrese el codigo de 7 digitos a enviar: ")
@@ -125,3 +132,37 @@ class Hamming:
 code = Hamming()
 code.paridad()
 code.calcHamming()
+
+#####################################################################################
+#####################################################################################
+#####################################################################################
+#####################################################################################
+#####################################################################################
+
+#Interfaz
+"""
+carpeta_principal = os.path.dirname(__file__)
+carpeta_img = os.path.join(carpeta_principal,"logo")
+
+vPrincipal = tkinter.Tk()
+vPrincipal.title("Codigo Hamming")
+vPrincipal.geometry("500x400")
+vPrincipal.iconbitmap(default=os.path.join(carpeta_img,"chip1.ico"))
+
+label1 = tkinter.Label(vPrincipal, text="Ingrese el codigo: ",width=30)
+label1.grid(row=1, column=0, sticky="n", padx=5, pady=5)
+label1.pack()
+
+cajatest = tkinter.Entry(vPrincipal,width=15)
+cajatest.pack()
+
+codigo = h.Hamming()
+
+boton1 = tkinter.Button(vPrincipal, text="Enter", command=)
+boton1.pack()
+
+nombre = tkinter.Label(vPrincipal, text = "Universidad de lima")
+nombre.pack(side = "bottom")
+
+vPrincipal.mainloop()
+"""
